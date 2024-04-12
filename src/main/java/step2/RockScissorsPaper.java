@@ -12,8 +12,8 @@ public class RockScissorsPaper {
         while (true) {
             System.out.println("가위, 바위, 보 중 하나를 선택하세요 :");
             try {
-                HandShape1 computerHand = getComputerHandShape();
-                HandShape1 userHand = getUserHandShape();
+                HandShape computerHand = getComputerHandShape();
+                HandShape userHand = getUserHandShape();
                 System.out.println("컴퓨터 : " + computerHand);
                 System.out.println("당신 : " + userHand);
                 int judge = computerHand.judge(userHand);
@@ -46,13 +46,13 @@ public class RockScissorsPaper {
         }
     }
 
-    private static HandShape1 getComputerHandShape() {
+    private static HandShape getComputerHandShape() {
         int computerShape = RANDOM.nextInt(3) + 1;
-        return HandShape1.toHandShape(computerShape);
+        return HandShape.toHandShape(computerShape);
     }
 
-    private static HandShape1 getUserHandShape() {
+    private static HandShape getUserHandShape() {
         String userShape = SCANNER.next();
-        return HandShape1.toHandShape(userShape);
+        return HandShape.toHandShape(userShape);
     }
 }

@@ -11,8 +11,8 @@ public class GameLoop {
         while (true) {
             System.out.println("가위, 바위, 보 중에 하나를 선택하세요 :");
 
-            HandShape2 computerHand = getComputerHand();
-            HandShape2 userHand;
+            HandShape computerHand = getComputerHand();
+            HandShape userHand;
 
             try {
                 userHand = getUserHand();
@@ -36,13 +36,13 @@ public class GameLoop {
         }
     }
 
-    private static HandShape2 getComputerHand() {
+    private static HandShape getComputerHand() {
         int inputShape = RANDOM.nextInt(3) + 1;
-        return HandShape2.toHandShape(inputShape);
+        return HandShape.toHandShape(inputShape);
     }
 
-    private static HandShape2 getUserHand() {
+    private static HandShape getUserHand() {
         String inputShape = SCANNER.next();
-        return HandShape2.toHandShape(inputShape);
+        return HandShape.toHandShape(inputShape);
     }
 }

@@ -1,12 +1,12 @@
 package step3;
 
-public enum HandShape2 {
+public enum HandShape {
     가위,
     바위,
     보;
     private static final HandShapeCompare HAND_SHAPE_COMPARE = new HandShapeCompare();
 
-    public static HandShape2 toHandShape(int computerHand) {
+    public static HandShape toHandShape(int computerHand) {
         return switch (computerHand) {
             case 1 -> 가위;
             case 2 -> 바위;
@@ -15,7 +15,7 @@ public enum HandShape2 {
         };
     }
 
-    public static HandShape2 toHandShape(String userHand) {
+    public static HandShape toHandShape(String userHand) {
         return switch (userHand) {
             case "가위" -> 가위;
             case "바위" -> 바위;
@@ -28,7 +28,7 @@ public enum HandShape2 {
         return this.ordinal() + 1;
     }
 
-    public int judge(HandShape2 other) {
+    public int judge(HandShape other) {
         return HAND_SHAPE_COMPARE.ShapeCompare(this, other);
     }
 }
